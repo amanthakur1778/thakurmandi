@@ -1,0 +1,1163 @@
+/* ==========================================================================
+   Chalo Himachal — Google Ads Landing Page Stylesheet
+   Curated by Aman Thakur (+91 6230135697)
+   Optimized for High-Quality Score, Fast FCP/LCP, and Mobile CRO
+   ========================================================================== */
+
+:root {
+  /* Prestige Royal Alpine Pine & Imperial Himalayan Gold Palette */
+  --primary: #0E4D3C;
+  --primary-hover: #09382B;
+  --primary-dark: #05241B;
+  --primary-light: #16654F;
+  --primary-subtle: #EDF5F2;
+  --primary-border: #B7D9CE;
+
+  --gold: #C59B27;
+  --gold-hover: #A67F18;
+  --gold-light: #FAF5E8;
+  --gold-border: #E8D5A0;
+  --gold-glow: rgba(197, 155, 39, 0.35);
+
+  --accent-coral: #B84233;
+  --dark-900: #0B131A;
+  --dark-800: #141F2B;
+  --dark-700: #263546;
+  --slate-600: #4B5B6D;
+  --slate-400: #8E9CAE;
+  --slate-200: #E2E6EA;
+  --slate-100: #F1F4F6;
+  --slate-50:  #FAF9F6;
+  --white:     #FFFFFF;
+
+  --whatsapp-green: #25D366;
+  --whatsapp-hover: #20bd5a;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 4px rgba(11, 19, 26, 0.06);
+  --shadow-md: 0 6px 16px rgba(11, 19, 26, 0.08);
+  --shadow-lg: 0 12px 28px rgba(11, 19, 26, 0.12);
+  --shadow-xl: 0 20px 40px rgba(11, 19, 26, 0.16);
+
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --transition: 0.2s ease;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--white);
+  color: var(--dark-900);
+  line-height: 1.5;
+  overflow-x: hidden;
+  padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 769px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+a, button, [role="button"] {
+  touch-action: manipulation;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ==========================================================================
+   1. Google Ads Top Trust Strip
+   ========================================================================== */
+.top-trust-strip {
+  background: #091118;
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(197, 155, 39, 0.25);
+}
+
+.trust-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.trust-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(197, 155, 39, 0.16);
+  color: #E5C365;
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.trust-items {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #CBD5E1;
+  font-weight: 500;
+}
+
+.trust-item strong {
+  color: #E5C365;
+}
+
+@media (max-width: 640px) {
+  .trust-strip-inner {
+    justify-content: center;
+    text-align: center;
+  }
+  .trust-items {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   2. Conversion-Focused Header (Zero Leak)
+   ========================================================================== */
+.lp-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--slate-200);
+  z-index: 100;
+  height: 76px;
+}
+
+.lp-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.brand-name span {
+  color: var(--gold);
+}
+
+.brand-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.header-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-header-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--primary-subtle);
+  border: 1px solid var(--primary-border);
+  color: var(--primary-dark);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+
+.btn-header-call:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.btn-header-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--whatsapp-green);
+  color: var(--white);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.35);
+  transition: all var(--transition);
+}
+
+.btn-header-wa:hover {
+  background: var(--whatsapp-hover);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .lp-header {
+    height: 64px;
+  }
+  .brand-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  .brand-name {
+    font-size: 1.15rem;
+  }
+  .brand-sub {
+    font-size: 0.62rem;
+  }
+  .btn-header-call {
+    display: none;
+  }
+  .btn-header-wa {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+}
+
+/* ==========================================================================
+   3. Hero Section & Lead Capture Form Grid
+   ========================================================================== */
+.lp-hero {
+  position: relative;
+  background: linear-gradient(180deg, rgba(11, 19, 26, 0.78) 0%, rgba(14, 77, 60, 0.88) 100%),
+              url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&auto=format&fit=crop&q=85') center/cover no-repeat;
+  color: var(--white);
+  padding: 56px 0 64px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: 48px;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(197, 155, 39, 0.22);
+  border: 1px solid rgba(229, 195, 101, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  color: #FDF9EE;
+  font-size: 0.82rem;
+  font-weight: 700;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title .highlight-gold {
+  color: #E5C365;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #F1F5F9;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-value-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-value-point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FAF9F6;
+}
+
+.hero-value-point .check-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #0B131A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.hero-advisor-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  width: fit-content;
+}
+
+.advisor-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #0B131A;
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.advisor-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.advisor-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+
+.advisor-role {
+  font-size: 0.78rem;
+  color: #CBD5E1;
+}
+
+/* Above-The-Fold Lead Capture Form Card */
+.lead-form-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  color: var(--dark-900);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(197, 155, 39, 0.4);
+  position: relative;
+}
+
+.form-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-tag {
+  display: inline-block;
+  background: var(--gold-light);
+  color: #8F6B12;
+  border: 1px solid var(--gold-border);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+
+.form-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1.25;
+}
+
+.form-sub {
+  font-size: 0.85rem;
+  color: var(--slate-600);
+  margin-top: 4px;
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--dark-700);
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  background: var(--slate-50);
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark-900);
+  outline: none;
+  transition: all var(--transition);
+}
+
+.form-input:focus,
+.form-select:focus {
+  background: var(--white);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-subtle);
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btn-submit-lead {
+  width: 100%;
+  height: 52px;
+  background: linear-gradient(135deg, #0E4D3C 0%, #16654F 100%);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(14, 77, 60, 0.4);
+  transition: all var(--transition);
+  margin-top: 6px;
+}
+
+.btn-submit-lead:hover {
+  background: linear-gradient(135deg, #09382B 0%, #0E4D3C 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 77, 60, 0.5);
+}
+
+.form-guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--slate-600);
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   4. Top Bestselling Google Ads Tour Packages
+   ========================================================================== */
+.section-py {
+  padding: 64px 0;
+}
+
+.bg-slate {
+  background: var(--slate-50);
+}
+
+.section-title-wrap {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+.section-pill {
+  display: inline-block;
+  background: var(--primary-subtle);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.section-subtext {
+  font-size: 0.95rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .packages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .packages-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.package-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--slate-200);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+}
+
+.package-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-border);
+}
+
+.package-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--slate-100);
+}
+
+.package-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.package-card:hover .package-media img {
+  transform: scale(1.05);
+}
+
+.package-duration-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(14, 77, 60, 0.92);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.package-deal-chip {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(11, 19, 26, 0.88);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #E5C365;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(197, 155, 39, 0.35);
+}
+
+.package-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.package-rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.star-rating {
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.rating-count {
+  font-size: 0.75rem;
+  color: var(--slate-600);
+}
+
+.package-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--dark-900);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.package-desc {
+  font-size: 0.85rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.inclusions-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+  border-top: 1px solid var(--slate-100);
+  padding-top: 12px;
+}
+
+.inclusions-list li {
+  font-size: 0.8rem;
+  color: var(--dark-800);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inclusions-list li svg {
+  width: 14px;
+  height: 14px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.package-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--slate-100);
+  padding-top: 14px;
+  gap: 10px;
+}
+
+.package-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.package-price-sub {
+  font-size: 0.72rem;
+  color: var(--slate-600);
+}
+
+.package-price-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.btn-package-inquire {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--whatsapp-green);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: all var(--transition);
+}
+
+.btn-package-inquire:hover {
+  background: var(--whatsapp-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   5. Why Book With Aman Thakur's Desk (4 Pillars)
+   ========================================================================== */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .why-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.why-card {
+  background: var(--white);
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all var(--transition);
+}
+
+.why-card:hover {
+  border-color: var(--primary-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.why-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--primary-subtle);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.why-card h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.why-card p {
+  font-size: 0.85rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   6. Authentic Traveler Testimonials
+   ========================================================================== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.review-box {
+  background: var(--white);
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.review-text {
+  font-size: 0.9rem;
+  color: var(--dark-800);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.reviewer-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid var(--slate-100);
+  padding-top: 12px;
+}
+
+.reviewer-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--primary-subtle);
+  color: var(--primary-dark);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.reviewer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewer-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--dark-900);
+}
+
+.reviewer-trip {
+  font-size: 0.75rem;
+  color: var(--slate-600);
+}
+
+/* ==========================================================================
+   7. Quick FAQ Accordion
+   ========================================================================== */
+.faq-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-trigger {
+  width: 100%;
+  text-align: left;
+  padding: 18px 20px;
+  background: transparent;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--dark-900);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background var(--transition);
+}
+
+.faq-trigger:hover {
+  background: var(--slate-50);
+}
+
+.faq-arrow {
+  transition: transform var(--transition);
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.faq-item.active .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-content {
+  padding: 0 20px 18px;
+  font-size: 0.88rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  display: none;
+}
+
+.faq-item.active .faq-content {
+  display: block;
+}
+
+/* ==========================================================================
+   8. Full Width Urgent CTA Banner
+   ========================================================================== */
+.urgent-cta-banner {
+  background: linear-gradient(135deg, #091118 0%, #0E4D3C 100%);
+  color: var(--white);
+  padding: 56px 0;
+  text-align: center;
+  border-top: 1px solid rgba(197, 155, 39, 0.3);
+}
+
+.urgent-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.urgent-heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.urgent-text {
+  font-size: 1rem;
+  color: #E2E8F0;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.urgent-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-urgent-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--gold);
+  color: #0B131A;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px rgba(197, 155, 39, 0.4);
+  transition: all var(--transition);
+}
+
+.btn-urgent-call:hover {
+  background: #d4a933;
+  transform: translateY(-2px);
+}
+
+.btn-urgent-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--whatsapp-green);
+  color: var(--white);
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  transition: all var(--transition);
+}
+
+.btn-urgent-wa:hover {
+  background: var(--whatsapp-hover);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   9. Clean Landing Page Footer
+   ========================================================================== */
+.lp-footer {
+  background: #091118;
+  color: #94A3B8;
+  padding: 36px 0 24px;
+  font-size: 0.82rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.lp-footer-copy {
+  margin-bottom: 12px;
+  color: #CBD5E1;
+}
+
+.lp-footer-sub {
+  color: #64748B;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   10. Sticky Mobile Bottom Conversion Bar (Fixed)
+   ========================================================================== */
+.mobile-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--slate-200);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  gap: 10px;
+  z-index: 200;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 769px) {
+  .mobile-sticky-bar {
+    display: none;
+  }
+}
+
+.btn-mobile-call {
+  flex: 1;
+  height: 48px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(14, 77, 60, 0.3);
+}
+
+.btn-mobile-wa {
+  flex: 1.1;
+  height: 48px;
+  background: var(--whatsapp-green);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
