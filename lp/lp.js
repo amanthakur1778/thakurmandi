@@ -63,11 +63,31 @@
       }
 
       // Track Conversion
-      triggerAdsConversion('form_lead_whatsapp');
+      triggerAdsConversion('form_lead_submission');
+
+      // Generate Reference ID
+      const refId = 'HT-' + Math.floor(100000 + Math.random() * 900000);
+
+      // Save Lead Data in Session Storage
+      const leadData = {
+        name: name,
+        phone: phone,
+        dest: dest,
+        date: date,
+        travelers: travelers,
+        type: type,
+        ref: refId,
+        timestamp: new Date().toISOString()
+      };
+      try {
+        sessionStorage.setItem('chalo_himachal_lead', JSON.stringify(leadData));
+      } catch (err) {
+        console.warn('Session storage save error:', err);
+      }
 
       // Construct WhatsApp Payload
       const message = 
-`🏔️ *Himachal Tour Package Inquiry*
+`🏔️ *Himachal Tour Package Inquiry* [Ref: ${refId}]
 --------------------------------
 • *Destination*: ${dest}
 • *Travel Month/Dates*: ${date}
@@ -75,25 +95,39 @@
 • *Lead Name*: ${name}
 • *Mobile / WhatsApp*: ${phone}
 
-Hi Aman! I saw your Google Ad and would like to get a personalized itinerary and best quote for our Himachal holiday.`;
+Hi Aman! I saw your Google Ad and submitted an inquiry for our Himachal holiday. Please share the customized itinerary and best quote.`;
 
       const encodedMsg = encodeURIComponent(message);
       const whatsappUrl = `https://wa.me/${AMAN_PHONE}?text=${encodedMsg}`;
 
       // Open WhatsApp in new tab/app
-      window.open(whatsappUrl, '_blank');
+      try {
+        window.open(whatsappUrl, '_blank');
+      } catch (err) {
+        console.warn('Popup blocked:', err);
+      }
 
-      // Visual feedback
+      // Visual feedback on button
       const submitBtn = document.getElementById('btnSubmitLead');
       if (submitBtn) {
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>Connecting to Aman Thakur on WhatsApp... ✓</span>';
+        submitBtn.innerHTML = '<span>Redirecting to Confirmation... ✓</span>';
         submitBtn.style.background = '#25D366';
-        setTimeout(() => {
-          submitBtn.innerHTML = originalText;
-          submitBtn.style.background = '';
-        }, 3500);
       }
+
+      // Build query string and redirect to thank-you page
+      const queryParams = new URLSearchParams({
+        name: name,
+        phone: phone,
+        dest: dest,
+        date: date,
+        travelers: travelers,
+        type: type,
+        ref: refId
+      }).toString();
+
+      setTimeout(() => {
+        window.location.href = `thank-you.html?${queryParams}`;
+      }, 500);
     });
   }
 

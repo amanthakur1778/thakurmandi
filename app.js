@@ -2125,10 +2125,35 @@ document.addEventListener('DOMContentLoaded', () => {
       const userName = nameInput.value.trim();
       const userPhone = phoneInput.value.trim();
       const chosenDest = destSelect.value;
+      const travelDate = dateInput ? dateInput.value : '';
+      const refId = 'HT-' + Math.floor(100000 + Math.random() * 900000);
 
-      showToast(`Thank you, ${userName}! Aman Thakur received your request for "${chosenDest}". We will call you at ${userPhone} shortly.`);
+      try {
+        sessionStorage.setItem('chalo_himachal_lead', JSON.stringify({
+          name: userName,
+          phone: userPhone,
+          dest: chosenDest,
+          date: travelDate || 'Upcoming Season',
+          travelers: 'Family / Group',
+          type: 'Direct Inquiry',
+          ref: refId
+        }));
+      } catch (err) {}
 
-      inquiryForm.reset();
+      showToast(`Thank you, ${userName}! Aman Thakur received your request for "${chosenDest}". Redirecting...`);
+
+      const queryParams = new URLSearchParams({
+        name: userName,
+        phone: userPhone,
+        dest: chosenDest,
+        date: travelDate || 'Upcoming Season',
+        ref: refId
+      }).toString();
+
+      setTimeout(() => {
+        inquiryForm.reset();
+        window.location.href = `thank-you.html?${queryParams}`;
+      }, 700);
     });
   }
 

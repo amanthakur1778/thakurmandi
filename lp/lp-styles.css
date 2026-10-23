@@ -1162,3 +1162,352 @@ img {
   gap: 6px;
   box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
 }
+
+/* ==========================================================================
+   11. Thank You Page Styles (Google Ads Conversion Experience)
+   ========================================================================== */
+.thankyou-section {
+  padding: 48px 0 80px;
+  min-height: calc(100vh - 140px);
+  background: linear-gradient(180deg, #F8FAFB 0%, #EFF4F2 100%);
+  display: flex;
+  align-items: center;
+}
+
+.thankyou-card {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--slate-200);
+  box-shadow: var(--shadow-xl);
+  padding: 44px 36px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .thankyou-section {
+    padding: 24px 0 60px;
+  }
+  .thankyou-card {
+    padding: 30px 20px;
+    border-radius: var(--radius-lg);
+  }
+}
+
+.success-badge-wrap {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 20px;
+  background: #E8F8EE;
+  border: 3px solid #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #25D366;
+  box-shadow: 0 0 0 8px rgba(37, 211, 102, 0.15);
+  animation: pulseSuccess 2s infinite ease-in-out;
+}
+
+@keyframes pulseSuccess {
+  0% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0.15); }
+  50% { transform: scale(1.04); box-shadow: 0 0 0 14px rgba(37, 211, 102, 0.08); }
+  100% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0.15); }
+}
+
+.thankyou-badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary-subtle);
+  border: 1px solid var(--primary-border);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+}
+
+.thankyou-title {
+  font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+  font-weight: 900;
+  color: var(--primary-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.thankyou-title .highlight-gold {
+  color: var(--gold);
+}
+
+.thankyou-sub {
+  font-size: 1.05rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+/* Inquiry Summary Card */
+.inquiry-summary-card {
+  background: var(--slate-50);
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.summary-header h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ref-tag {
+  background: rgba(197, 155, 39, 0.15);
+  border: 1px solid var(--gold-border);
+  color: #8C6A10;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-family: monospace;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px 20px;
+}
+
+@media (min-width: 640px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.summary-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.summary-val {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark-800);
+  word-break: break-word;
+}
+
+.summary-status-row {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--slate-200);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.status-pulse-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--whatsapp-green);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.25);
+  animation: pulseSuccess 1.5s infinite;
+}
+
+/* Primary Conversion CTAs */
+.thankyou-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 580px;
+  margin: 0 auto 36px;
+}
+
+@media (min-width: 600px) {
+  .thankyou-cta-group {
+    flex-direction: row;
+  }
+}
+
+.btn-ty-whatsapp {
+  flex: 1.2;
+  height: 52px;
+  background: var(--whatsapp-green);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: all var(--transition);
+}
+
+.btn-ty-whatsapp:hover {
+  background: var(--whatsapp-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+.btn-ty-call {
+  flex: 1;
+  height: 52px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(14, 77, 60, 0.25);
+  transition: all var(--transition);
+}
+
+.btn-ty-call:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(14, 77, 60, 0.35);
+}
+
+/* What Happens Next Timeline */
+.timeline-section {
+  text-align: left;
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.timeline-heading {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.timeline-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 640px) {
+  .timeline-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.step-num-pill {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.step-item h4 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+}
+
+.step-item p {
+  font-size: 0.82rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+
+/* Back Link & Direct Hotline */
+.back-home-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.btn-back-packages {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 8px 18px;
+  border: 1.5px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  background: var(--white);
+  transition: all var(--transition);
+}
+
+.btn-back-packages:hover {
+  background: var(--primary-subtle);
+  border-color: var(--primary);
+  transform: translateX(-3px);
+}
+
+.ty-trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--slate-600);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
